@@ -260,6 +260,12 @@ fixtures = [
 		"filters": [
 			["module", "=", "Property Management"]
 		]
+	},
+	{
+		"dt": "Report",
+		"filters": [
+			["module", "=", "Property Management"]
+		]
 	}
 ]
 
