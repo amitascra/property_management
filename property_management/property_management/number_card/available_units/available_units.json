@@ -1,21 +1,23 @@
 {
  "aggregate_function_based_on": "",
- "creation": "2026-04-10 18:57:00.000000",
+ "creation": "2026-04-10 18:57:00",
  "docstatus": 0,
  "doctype": "Number Card",
  "document_type": "Unit",
  "dynamic_filters_json": "[]",
- "filters_json": "[[\"status\", \"=\", \"Available\"]]",
+ "filters_json": "[[\"Unit\",\"status\",\"=\",\"Available\",false]]",
  "function": "Count",
  "idx": 0,
  "is_public": 1,
  "is_standard": 1,
  "label": "Available Units",
- "modified": "2026-04-10 18:57:00.000000",
+ "modified": "2026-04-10 21:31:52.728316",
  "modified_by": "Administrator",
  "module": "Property Management",
  "name": "Available Units",
  "owner": "Administrator",
+ "show_full_number": 0,
  "show_percentage_stats": 1,
- "stats_time_interval": "Daily"
+ "stats_time_interval": "Daily",
+ "type": "Document Type"
 }

@@ -57,6 +57,9 @@ def import_workspace_fixtures():
 		
 		# Import number cards
 		import_number_cards()
+		
+		# Import dashboard after charts and cards are created
+		import_dashboard_fixtures()
 			
 	except Exception as e:
 		frappe.logger().error(f"Error importing workspace fixtures: {str(e)}")
@@ -322,3 +325,52 @@ def setup_erpnext_custom_fields():
 		print("   bench --site <sitename> console")
 		print("   >>> from property_management.property_management.setup.custom_fields import setup_property_management_custom_fields")
 		print("   >>> setup_property_management_custom_fields()")
+
+
+def import_dashboard_fixtures():
+	"""Import dashboard fixtures following ERPNext patterns"""
+	try:
+		dashboard_name = "Property Management"
+		
+		if not frappe.db.exists("Dashboard", dashboard_name):
+			# Verify required cards exist
+			required_cards = ["Total Properties", "Active Tenancies", "Available Units", "Monthly Rental Income", "Open Service Requests"]
+			cards_exist = all(frappe.db.exists("Number Card", card) for card in required_cards)
+			
+			if cards_exist:
+				# Create dashboard following successful console approach
+				dashboard_doc = frappe.get_doc({
+					"doctype": "Dashboard",
+					"dashboard_name": dashboard_name,
+					"module": "Property Management",
+					"is_default": 1,
+					"is_standard": 1
+				})
+				
+				# Add property-specific charts
+				property_charts = ["Property Portfolio Overview", "Rental Income Trends"]
+				for chart_name in property_charts:
+					if frappe.db.exists("Dashboard Chart", chart_name):
+						dashboard_doc.append('charts', {'chart': chart_name, 'width': 'Half'})
+					else:
+						print(f"⚠️  Dashboard Chart '{chart_name}' not found, skipping")
+				
+				# Add number cards
+				for card_name in required_cards:
+					if frappe.db.exists("Number Card", card_name):
+						dashboard_doc.append('cards', {'card': card_name})
+				
+				dashboard_doc.insert(ignore_permissions=True)
+				frappe.logger().info(f"Created dashboard: {dashboard_name}")
+				print(f"✅ Created dashboard: {dashboard_name}")
+			else:
+				missing_cards = [card for card in required_cards if not frappe.db.exists("Number Card", card)]
+				frappe.logger().warning(f"Cannot create dashboard - missing cards: {missing_cards}")
+				print(f"⚠️  Cannot create dashboard - missing cards: {missing_cards}")
+		else:
+			frappe.logger().info(f"Dashboard {dashboard_name} already exists")
+			print(f"ℹ️  Dashboard {dashboard_name} already exists")
+			
+	except Exception as e:
+		frappe.logger().error(f"Error creating dashboard: {str(e)}")
+		print(f"❌ Error creating dashboard: {str(e)}")

@@ -29,24 +29,8 @@ class UtilityMeter(Document):
 
 	def on_update(self):
 		"""Actions to perform on update"""
-		self.create_asset_if_needed()
-
-	def create_asset_if_needed(self):
-		"""Create corresponding asset for the meter if not exists"""
-		if not self.asset_link and self.status == "Active":
-			asset = frappe.new_doc("Asset")
-			asset.asset_name = f"{self.utility_type} Meter - {self.meter_number}"
-			asset.item_code = f"{self.utility_type} Meter"  # Assuming generic meter items exist
-			asset.company = self.company
-			asset.cost_center = self.cost_center
-			asset.location = self.meter_location or f"Unit {self.unit}"
-			asset.purchase_date = self.installation_date or frappe.utils.today()
-			asset.available_for_use_date = self.installation_date or frappe.utils.today()
-			asset.gross_purchase_amount = 0  # To be updated later
-			asset.save()
-			
-			self.asset_link = asset.name
-			self.save()
+		# Utility Meter is now working - no Asset creation needed
+		pass
 
 	def update_last_reading(self, reading_value, reading_date):
 		"""Update last reading information"""

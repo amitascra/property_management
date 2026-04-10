@@ -1,0 +1,34 @@
+{
+ "chart_name": "Rental Income Trends",
+ "chart_type": "Custom",
+ "creation": "2026-04-10 21:12:00.000000",
+ "custom_options": "{\n    \"fieldtype\": \"Currency\"\n}",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "filters_json": "{}",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2026-04-10 21:12:00.000000",
+ "modified_by": "Administrator",
+ "module": "Property Management",
+ "name": "Rental Income Trends",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "roles": [
+  {
+   "role": "Property Manager"
+  },
+  {
+   "role": "Property Owner"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "source": "Rental Income Trends",
+ "timeseries": 1,
+ "type": "Line",
+ "use_report_chart": 0,
+ "y_axis": []
+}

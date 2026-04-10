@@ -266,6 +266,18 @@ fixtures = [
 		"filters": [
 			["module", "=", "Property Management"]
 		]
+	},
+	{
+		"dt": "Dashboard",
+		"filters": [
+			["module", "=", "Property Management"]
+		]
+	},
+	{
+		"dt": "Dashboard Chart",
+		"filters": [
+			["module", "=", "Property Management"]
+		]
 	}
 ]
 

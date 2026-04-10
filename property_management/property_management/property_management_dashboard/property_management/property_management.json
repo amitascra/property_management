@@ -1,0 +1,41 @@
+{
+ "cards": [
+  {
+   "card": "Total Properties"
+  },
+  {
+   "card": "Active Tenancies"
+  },
+  {
+   "card": "Available Units"
+  },
+  {
+   "card": "Monthly Rental Income"
+  },
+  {
+   "card": "Open Service Requests"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Property Portfolio Overview",
+   "width": "Half"
+  },
+  {
+   "chart": "Rental Income Trends",
+   "width": "Half"
+  }
+ ],
+ "creation": "2026-04-10 21:08:27.511999",
+ "dashboard_name": "Property Management",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2026-04-10 21:15:53.177758",
+ "modified_by": "Administrator",
+ "module": "Property Management",
+ "name": "Property Management",
+ "owner": "Administrator"
+}
