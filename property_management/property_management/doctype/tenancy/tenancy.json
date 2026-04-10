@@ -1,0 +1,244 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-04-10 18:10:00.000000",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "unit",
+  "tenant",
+  "agreement_type",
+  "status",
+  "column_break_5",
+  "lease_start_date",
+  "lease_end_date",
+  "rent_due_date",
+  "notice_period_days",
+  "section_break_10",
+  "monthly_rent",
+  "security_deposit",
+  "maintenance_charges",
+  "column_break_14",
+  "subscription_link",
+  "company",
+  "cost_center",
+  "section_break_18",
+  "rent_history",
+  "section_break_20",
+  "agreement_copy",
+  "terms_and_conditions"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "TNC-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Unit",
+   "options": "Unit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Tenant",
+   "options": "Tenant Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "agreement_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Agreement Type",
+   "options": "Lease\nRent\nLicense Agreement",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nActive\nExpired\nTerminated\nRenewed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lease_start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Lease Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lease_end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Lease End Date",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "rent_due_date",
+   "fieldtype": "Int",
+   "label": "Rent Due Date (Day of Month)",
+   "reqd": 1
+  },
+  {
+   "default": "30",
+   "fieldname": "notice_period_days",
+   "fieldtype": "Int",
+   "label": "Notice Period (Days)"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Financial Details"
+  },
+  {
+   "fieldname": "monthly_rent",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Monthly Rent",
+   "options": "Company:company:default_currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "security_deposit",
+   "fieldtype": "Currency",
+   "label": "Security Deposit",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "maintenance_charges",
+   "fieldtype": "Currency",
+   "label": "Maintenance Charges",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subscription_link",
+   "fieldtype": "Link",
+   "label": "Subscription",
+   "options": "Subscription",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break",
+   "label": "Rent History"
+  },
+  {
+   "fieldname": "rent_history",
+   "fieldtype": "Table",
+   "label": "Rent History",
+   "options": "Rent History",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break",
+   "label": "Agreement Details"
+  },
+  {
+   "fieldname": "agreement_copy",
+   "fieldtype": "Attach",
+   "label": "Agreement Copy"
+  },
+  {
+   "fieldname": "terms_and_conditions",
+   "fieldtype": "Text Editor",
+   "label": "Terms and Conditions"
+  }
+ ],
+ "idx": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Payments",
+   "link_doctype": "Sales Invoice",
+   "link_fieldname": "tenancy"
+  },
+  {
+   "group": "Maintenance",
+   "link_doctype": "Service Request",
+   "link_fieldname": "tenancy"
+  }
+ ],
+ "modified": "2026-04-10 18:10:00.000000",
+ "modified_by": "Administrator",
+ "module": "Property Management",
+ "name": "Tenancy",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Property Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "unit",
+ "track_changes": 1
+}

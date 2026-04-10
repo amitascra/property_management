@@ -1,0 +1,204 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-04-10 17:35:00.000000",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "building_name",
+  "building_code",
+  "property_project",
+  "building_type",
+  "status",
+  "column_break_6",
+  "total_floors",
+  "total_units",
+  "construction_year",
+  "address",
+  "section_break_11",
+  "amenities",
+  "section_break_13",
+  "asset_link",
+  "cost_center",
+  "column_break_16",
+  "company",
+  "maintenance_contact"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "BLDG-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "building_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Building Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "building_code",
+   "fieldtype": "Data",
+   "label": "Building Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "property_project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Property Project",
+   "options": "Property Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "building_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Building Type",
+   "options": "Residential\nCommercial\nParking\nAmenity",
+   "reqd": 1
+  },
+  {
+   "default": "Under Construction",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Under Construction\nReady\nOccupied\nMaintenance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_floors",
+   "fieldtype": "Int",
+   "label": "Total Floors",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_units",
+   "fieldtype": "Int",
+   "label": "Total Units",
+   "read_only": 1
+  },
+  {
+   "fieldname": "construction_year",
+   "fieldtype": "Int",
+   "label": "Construction Year"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break",
+   "label": "Amenities"
+  },
+  {
+   "fieldname": "amenities",
+   "fieldtype": "Table",
+   "label": "Amenities",
+   "options": "Building Amenity"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break",
+   "label": "Asset & Financial Details"
+  },
+  {
+   "fieldname": "asset_link",
+   "fieldtype": "Link",
+   "label": "Asset",
+   "options": "Asset"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "maintenance_contact",
+   "fieldtype": "Link",
+   "label": "Maintenance Contact",
+   "options": "Employee"
+  }
+ ],
+ "idx": 1,
+ "is_submittable": 0,
+ "links": [
+  {
+   "group": "Floors",
+   "link_doctype": "Floor",
+   "link_fieldname": "building"
+  },
+  {
+   "group": "Units",
+   "link_doctype": "Unit",
+   "link_fieldname": "building"
+  }
+ ],
+ "modified": "2026-04-10 17:35:00.000000",
+ "modified_by": "Administrator",
+ "module": "Property Management",
+ "name": "Building",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Property Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "building_name",
+ "track_changes": 1
+}

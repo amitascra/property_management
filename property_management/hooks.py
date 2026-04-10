@@ -1,14 +1,14 @@
 app_name = "property_management"
-app_title = "property_management"
+app_title = "Property Management"
 app_publisher = "Amit Kumar"
-app_description = "Property management app"
+app_description = "Comprehensive property management system for real estate operations"
 app_email = "amit@ascratech.com"
 app_license = "mit"
 
 # Apps
 # ------------------
 
-# required_apps = []
+required_apps = ["frappe", "erpnext"]
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
@@ -83,7 +83,10 @@ app_license = "mit"
 # ------------
 
 # before_install = "property_management.install.before_install"
-# after_install = "property_management.install.after_install"
+after_install = "property_management.property_management.install.after_install"
+
+# Migration hooks - runs after DocTypes are synced and migrated
+after_migrate = "property_management.property_management.install.after_migrate"
 
 # Uninstallation
 # ------------
@@ -148,23 +151,18 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"property_management.tasks.all"
-# 	],
-# 	"daily": [
-# 		"property_management.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"property_management.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"property_management.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"property_management.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"daily": [
+		"property_management.property_management.tasks.check_lease_expiry",
+		"property_management.property_management.tasks.send_rent_reminders"
+	],
+	"weekly": [
+		"property_management.property_management.tasks.generate_maintenance_reports"
+	],
+	"monthly": [
+		"property_management.property_management.tasks.update_property_valuations"
+	]
+}
 
 # Testing
 # -------
@@ -241,6 +239,17 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+
+# Fixtures
+# --------
+fixtures = [
+	{
+		"dt": "Workspace",
+		"filters": [
+			["module", "=", "Property Management"]
+		]
+	}
+]
 
 # Translation
 # ------------

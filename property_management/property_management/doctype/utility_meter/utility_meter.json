@@ -1,0 +1,190 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:meter_number",
+ "creation": "2026-04-10 18:20:00.000000",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "meter_number",
+  "unit",
+  "utility_type",
+  "meter_type",
+  "status",
+  "column_break_5",
+  "installation_date",
+  "last_reading_date",
+  "last_reading_value",
+  "supplier_provider",
+  "section_break_10",
+  "meter_location",
+  "asset_link",
+  "column_break_13",
+  "company",
+  "cost_center",
+  "section_break_16",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "meter_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Meter Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Unit",
+   "options": "Unit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "utility_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Utility Type",
+   "options": "Electricity\nWater\nGas\nInternet\nCable TV",
+   "reqd": 1
+  },
+  {
+   "fieldname": "meter_type",
+   "fieldtype": "Select",
+   "label": "Meter Type",
+   "options": "Digital\nAnalog\nSmart Meter\nPrepaid"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Active\nInactive\nFaulty\nReplaced\nRemoved",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "installation_date",
+   "fieldtype": "Date",
+   "label": "Installation Date"
+  },
+  {
+   "fieldname": "last_reading_date",
+   "fieldtype": "Date",
+   "label": "Last Reading Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_reading_value",
+   "fieldtype": "Float",
+   "label": "Last Reading Value",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplier_provider",
+   "fieldtype": "Data",
+   "label": "Supplier/Provider"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Location & Asset Details"
+  },
+  {
+   "fieldname": "meter_location",
+   "fieldtype": "Data",
+   "label": "Meter Location"
+  },
+  {
+   "fieldname": "asset_link",
+   "fieldtype": "Link",
+   "label": "Asset",
+   "options": "Asset"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break",
+   "label": "Additional Information"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  }
+ ],
+ "idx": 1,
+ "is_submittable": 0,
+ "links": [
+  {
+   "group": "Readings",
+   "link_doctype": "Meter Reading",
+   "link_fieldname": "utility_meter"
+  }
+ ],
+ "modified": "2026-04-10 18:20:00.000000",
+ "modified_by": "Administrator",
+ "module": "Property Management",
+ "name": "Utility Meter",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Property Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "meter_number",
+ "track_changes": 1
+}

@@ -1,0 +1,169 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"header_1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Property Management</b></span>\",\"col\":12}},{\"id\":\"shortcuts_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h5\\\"><b>Quick Actions</b></span>\",\"col\":12}},{\"id\":\"shortcut_1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Property Project\",\"col\":3}},{\"id\":\"shortcut_2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Unit\",\"col\":3}},{\"id\":\"shortcut_3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tenancy\",\"col\":3}},{\"id\":\"shortcut_4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Service Request\",\"col\":3}},{\"id\":\"spacer_1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"cards_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h5\\\"><b>Modules</b></span>\",\"col\":12}},{\"id\":\"card_1\",\"type\":\"card\",\"data\":{\"card_name\":\"Property Portfolio\",\"col\":4}},{\"id\":\"card_2\",\"type\":\"card\",\"data\":{\"card_name\":\"Tenant Management\",\"col\":4}},{\"id\":\"card_3\",\"type\":\"card\",\"data\":{\"card_name\":\"Utilities & Maintenance\",\"col\":4}}]",
+ "creation": "2026-04-10 18:45:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "building",
+ "idx": 0,
+ "indicator_color": "blue",
+ "is_hidden": 0,
+ "label": "Property Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Property Portfolio",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Property Project",
+   "link_count": 0,
+   "link_to": "Property Project",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Building",
+   "link_count": 0,
+   "link_to": "Building",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Floor",
+   "link_count": 0,
+   "link_to": "Floor",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Unit",
+   "link_count": 0,
+   "link_to": "Unit",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tenant Management",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tenant Profile",
+   "link_count": 0,
+   "link_to": "Tenant Profile",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tenancy",
+   "link_count": 0,
+   "link_to": "Tenancy",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Utilities & Maintenance",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Utility Meter",
+   "link_count": 0,
+   "link_to": "Utility Meter",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Meter Reading",
+   "link_count": 0,
+   "link_to": "Meter Reading",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Service Request",
+   "link_count": 0,
+   "link_to": "Service Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-04-10 18:45:00.000000",
+ "modified_by": "Administrator",
+ "module": "Property Management",
+ "name": "Property Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "format": "{} Active",
+   "label": "Active Tenancies",
+   "link_to": "Tenancy",
+   "stats_filter": "{\"status\": \"Active\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "format": "{} Available",
+   "label": "Available Units",
+   "link_to": "Unit",
+   "stats_filter": "{\"status\": \"Available\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "format": "{} Open",
+   "label": "Open Service Requests",
+   "link_to": "Service Request",
+   "stats_filter": "{\"status\": \"Open\"}",
+   "type": "DocType"
+  }
+ ],
+ "title": "Property Management"
+}

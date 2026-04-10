@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "creation": "2026-04-10 18:05:00.000000",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "reference_name",
+  "contact_number",
+  "relation",
+  "verified"
+ ],
+ "fields": [
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reference Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Contact Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "relation",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Relation",
+   "options": "Friend\nColleague\nFamily Member\nEmployer\nPrevious Landlord\nOther"
+  },
+  {
+   "default": "0",
+   "fieldname": "verified",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Verified"
+  }
+ ],
+ "idx": 1,
+ "istable": 1,
+ "modified": "2026-04-10 18:05:00.000000",
+ "modified_by": "Administrator",
+ "module": "Property Management",
+ "name": "Tenant Reference",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "creation": "2026-04-10 18:15:00.000000",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "month_year",
+  "amount",
+  "due_date",
+  "payment_date",
+  "payment_mode",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "month_year",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Month/Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Payment Date"
+  },
+  {
+   "fieldname": "payment_mode",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Payment Mode",
+   "options": "Cash\nBank Transfer\nCheque\nOnline\nUPI"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Pending\nPaid\nOverdue\nPartial"
+  }
+ ],
+ "idx": 1,
+ "istable": 1,
+ "modified": "2026-04-10 18:15:00.000000",
+ "modified_by": "Administrator",
+ "module": "Property Management",
+ "name": "Rent History",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

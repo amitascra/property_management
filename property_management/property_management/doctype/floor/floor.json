@@ -1,0 +1,153 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-04-10 17:45:00.000000",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "floor_number",
+  "building",
+  "property_project",
+  "floor_type",
+  "status",
+  "column_break_6",
+  "total_units",
+  "floor_area",
+  "floor_plan",
+  "section_break_10",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "FLR-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "floor_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Floor Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "building",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Building",
+   "options": "Building",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "building.property_project",
+   "fieldname": "property_project",
+   "fieldtype": "Link",
+   "label": "Property Project",
+   "options": "Property Project",
+   "read_only": 1
+  },
+  {
+   "fieldname": "floor_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Floor Type",
+   "options": "Residential\nCommercial\nParking\nAmenity\nMixed",
+   "reqd": 1
+  },
+  {
+   "default": "Under Construction",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Under Construction\nReady\nOccupied\nMaintenance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_units",
+   "fieldtype": "Int",
+   "label": "Total Units",
+   "read_only": 1
+  },
+  {
+   "fieldname": "floor_area",
+   "fieldtype": "Float",
+   "label": "Floor Area (Sq Ft)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "floor_plan",
+   "fieldtype": "Attach Image",
+   "label": "Floor Plan"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  }
+ ],
+ "idx": 1,
+ "is_submittable": 0,
+ "links": [
+  {
+   "group": "Units",
+   "link_doctype": "Unit",
+   "link_fieldname": "floor"
+  }
+ ],
+ "modified": "2026-04-10 17:45:00.000000",
+ "modified_by": "Administrator",
+ "module": "Property Management",
+ "name": "Floor",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Property Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "floor_number",
+ "track_changes": 1
+}

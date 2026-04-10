@@ -1,0 +1,233 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-04-10 17:50:00.000000",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "unit_number",
+  "floor",
+  "building",
+  "property_project",
+  "unit_type",
+  "status",
+  "column_break_7",
+  "carpet_area",
+  "built_up_area",
+  "super_built_up_area",
+  "facing",
+  "section_break_13",
+  "base_price",
+  "current_market_value",
+  "column_break_16",
+  "item_code",
+  "cost_center",
+  "section_break_19",
+  "amenities",
+  "section_break_21",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "UNIT-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "unit_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Unit Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "floor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Floor",
+   "options": "Floor",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "floor.building",
+   "fieldname": "building",
+   "fieldtype": "Link",
+   "label": "Building",
+   "options": "Building",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "floor.property_project",
+   "fieldname": "property_project",
+   "fieldtype": "Link",
+   "label": "Property Project",
+   "options": "Property Project",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unit_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Unit Type",
+   "options": "1BHK\n2BHK\n3BHK\n4BHK\nStudio\nPenthouse\nOffice\nShop\nWarehouse\nParking",
+   "reqd": 1
+  },
+  {
+   "default": "Available",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Available\nBooked\nSold\nRented\nMaintenance\nBlocked",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "carpet_area",
+   "fieldtype": "Float",
+   "label": "Carpet Area (Sq Ft)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "built_up_area",
+   "fieldtype": "Float",
+   "label": "Built-up Area (Sq Ft)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "super_built_up_area",
+   "fieldtype": "Float",
+   "label": "Super Built-up Area (Sq Ft)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "facing",
+   "fieldtype": "Select",
+   "label": "Facing",
+   "options": "North\nSouth\nEast\nWest\nNorth-East\nNorth-West\nSouth-East\nSouth-West"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break",
+   "label": "Pricing"
+  },
+  {
+   "fieldname": "base_price",
+   "fieldtype": "Currency",
+   "label": "Base Price",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "current_market_value",
+   "fieldtype": "Currency",
+   "label": "Current Market Value",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break",
+   "label": "Amenities"
+  },
+  {
+   "fieldname": "amenities",
+   "fieldtype": "Table",
+   "label": "Amenities",
+   "options": "Unit Amenity"
+  },
+  {
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  }
+ ],
+ "idx": 1,
+ "is_submittable": 0,
+ "links": [
+  {
+   "group": "Tenancy",
+   "link_doctype": "Tenancy",
+   "link_fieldname": "unit"
+  },
+  {
+   "group": "Utilities",
+   "link_doctype": "Utility Meter",
+   "link_fieldname": "unit"
+  },
+  {
+   "group": "Maintenance",
+   "link_doctype": "Service Request",
+   "link_fieldname": "unit"
+  }
+ ],
+ "modified": "2026-04-10 17:50:00.000000",
+ "modified_by": "Administrator",
+ "module": "Property Management",
+ "name": "Unit",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Property Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "unit_number",
+ "track_changes": 1
+}

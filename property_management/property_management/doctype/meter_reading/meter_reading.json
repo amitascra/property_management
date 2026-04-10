@@ -1,0 +1,205 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-04-10 18:25:00.000000",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "utility_meter",
+  "unit",
+  "reading_date",
+  "status",
+  "column_break_5",
+  "previous_reading",
+  "current_reading",
+  "consumption",
+  "rate_per_unit",
+  "amount",
+  "section_break_11",
+  "reading_taken_by",
+  "photo",
+  "column_break_14",
+  "company",
+  "cost_center",
+  "section_break_17",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "MTR-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "utility_meter",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Utility Meter",
+   "options": "Utility Meter",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "utility_meter.unit",
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "label": "Unit",
+   "options": "Unit",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "reading_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Reading Date",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nSubmitted\nBilled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "previous_reading",
+   "fieldtype": "Float",
+   "label": "Previous Reading",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "current_reading",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Current Reading",
+   "precision": "3",
+   "reqd": 1
+  },
+  {
+   "fieldname": "consumption",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Consumption",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rate_per_unit",
+   "fieldtype": "Currency",
+   "label": "Rate per Unit",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break",
+   "label": "Reading Details"
+  },
+  {
+   "fieldname": "reading_taken_by",
+   "fieldtype": "Link",
+   "label": "Reading Taken By",
+   "options": "User"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "label": "Meter Photo"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "utility_meter.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "utility_meter.cost_center",
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break",
+   "label": "Additional Information"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  }
+ ],
+ "idx": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-10 18:25:00.000000",
+ "modified_by": "Administrator",
+ "module": "Property Management",
+ "name": "Meter Reading",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Property Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "utility_meter",
+ "track_changes": 1
+}
