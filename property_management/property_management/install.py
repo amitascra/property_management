@@ -10,12 +10,14 @@ def after_install():
 	create_custom_roles()
 	create_default_role_profiles()
 	configure_doctype_permissions()
+	setup_erpnext_custom_fields()
 	frappe.db.commit()
 
 
 def after_migrate():
 	"""Run after migration - when DocTypes are fully synced"""
 	import_workspace_fixtures()
+	setup_erpnext_custom_fields()
 	frappe.db.commit()
 
 
@@ -295,3 +297,28 @@ def set_doctype_permissions(doctype, permissions):
 		frappe.logger().info(f"Configured permissions for {doctype}")
 	except Exception as e:
 		frappe.logger().error(f"Error configuring permissions for {doctype}: {str(e)}")
+
+
+def setup_erpnext_custom_fields():
+	"""Setup custom fields in ERPNext DocTypes for property management integration"""
+	try:
+		from property_management.property_management.setup.custom_fields import setup_property_management_custom_fields
+		
+		print("\n🔧 Setting up Property Management custom fields in ERPNext DocTypes...")
+		result = setup_property_management_custom_fields()
+		
+		if result.get("success"):
+			print(f"✅ Property Management custom fields created successfully ({result.get('fields_created', 0)} fields)")
+		else:
+			print("⚠️  Custom fields setup completed with warnings")
+			
+	except Exception as e:
+		frappe.log_error(
+			message=f"Failed to create Property Management custom fields: {str(e)}",
+			title="Property Management Custom Fields Setup Failed"
+		)
+		print(f"⚠️  Warning: Failed to create custom fields: {str(e)}")
+		print("   You can create them manually later using:")
+		print("   bench --site <sitename> console")
+		print("   >>> from property_management.property_management.setup.custom_fields import setup_property_management_custom_fields")
+		print("   >>> setup_property_management_custom_fields()")
