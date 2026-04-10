@@ -1,0 +1,20 @@
+{
+ "chart_name": "Rental Income Trends",
+ "chart_type": "Line",
+ "creation": "2026-04-10 18:52:00.000000",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart Source",
+ "filters_json": "{}",
+ "group_by_based_on": "creation",
+ "group_by_type": "Sum",
+ "idx": 0,
+ "is_public": 1,
+ "modified": "2026-04-10 18:52:00.000000",
+ "modified_by": "Administrator",
+ "module": "Property Management",
+ "name": "Rental Income Trends",
+ "owner": "Administrator",
+ "source": "Sales Invoice",
+ "timeseries": 1,
+ "value_based_on": "grand_total"
+}

@@ -248,6 +248,18 @@ fixtures = [
 		"filters": [
 			["module", "=", "Property Management"]
 		]
+	},
+	{
+		"dt": "Dashboard Chart Source",
+		"filters": [
+			["module", "=", "Property Management"]
+		]
+	},
+	{
+		"dt": "Number Card",
+		"filters": [
+			["module", "=", "Property Management"]
+		]
 	}
 ]
 

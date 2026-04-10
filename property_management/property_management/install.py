@@ -20,12 +20,12 @@ def after_migrate():
 
 
 def import_workspace_fixtures():
-	"""Import workspace fixtures"""
+	"""Import workspace, dashboard charts, and number cards fixtures"""
 	try:
-		# Import workspace from fixtures
-		from frappe.core.doctype.data_import.data_import import import_doc
 		import os
+		import json
 		
+		# Import workspace
 		workspace_path = os.path.join(
 			frappe.get_app_path("property_management"),
 			"property_management", 
@@ -36,7 +36,6 @@ def import_workspace_fixtures():
 		
 		if os.path.exists(workspace_path):
 			with open(workspace_path, 'r') as f:
-				import json
 				workspace_data = json.load(f)
 				
 			# Check if workspace already exists
@@ -50,11 +49,63 @@ def import_workspace_fixtures():
 				existing_workspace.update(workspace_data)
 				existing_workspace.save(ignore_permissions=True)
 				frappe.logger().info(f"Updated workspace: {workspace_data.get('name')}")
-		else:
-			frappe.logger().error(f"Workspace file not found at: {workspace_path}")
+		
+		# Import dashboard charts
+		import_dashboard_charts()
+		
+		# Import number cards
+		import_number_cards()
 			
 	except Exception as e:
-		frappe.logger().error(f"Error importing workspace: {str(e)}")
+		frappe.logger().error(f"Error importing workspace fixtures: {str(e)}")
+
+
+def import_dashboard_charts():
+	"""Import dashboard chart sources"""
+	import os
+	import json
+	
+	charts_dir = os.path.join(
+		frappe.get_app_path("property_management"),
+		"property_management", 
+		"dashboard_chart_source"
+	)
+	
+	if os.path.exists(charts_dir):
+		for chart_folder in os.listdir(charts_dir):
+			chart_path = os.path.join(charts_dir, chart_folder, f"{chart_folder}.json")
+			if os.path.exists(chart_path):
+				with open(chart_path, 'r') as f:
+					chart_data = json.load(f)
+				
+				if not frappe.db.exists("Dashboard Chart Source", chart_data.get("name")):
+					chart_doc = frappe.get_doc(chart_data)
+					chart_doc.insert(ignore_permissions=True)
+					frappe.logger().info(f"Created dashboard chart: {chart_data.get('name')}")
+
+
+def import_number_cards():
+	"""Import number cards"""
+	import os
+	import json
+	
+	cards_dir = os.path.join(
+		frappe.get_app_path("property_management"),
+		"property_management", 
+		"number_card"
+	)
+	
+	if os.path.exists(cards_dir):
+		for card_folder in os.listdir(cards_dir):
+			card_path = os.path.join(cards_dir, card_folder, f"{card_folder}.json")
+			if os.path.exists(card_path):
+				with open(card_path, 'r') as f:
+					card_data = json.load(f)
+				
+				if not frappe.db.exists("Number Card", card_data.get("name")):
+					card_doc = frappe.get_doc(card_data)
+					card_doc.insert(ignore_permissions=True)
+					frappe.logger().info(f"Created number card: {card_data.get('name')}")
 
 
 def create_custom_roles():
