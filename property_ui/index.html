@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Property Management</title>
+    
+    <meta name="theme-color" content="#3B82F6" />
+    <meta name="description" content="Comprehensive property management system for real estate operations" />
+    
+    <!-- iOS Specific -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Property Management" />
+    
+    <!-- General -->
+    <meta name="application-name" content="Property Management" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    
+    <script>
+      window.csrf_token = "{{ csrf_token }}"
+      window.site_name = '{{ site_name }}'
+      if (!window.frappe) window.frappe = {}
+      frappe.boot = {{ boot }}
+    </script>
+  </body>
+</html>

@@ -28,6 +28,29 @@
   "project_manager",
   "section_break_18",
   "description",
+  "property_details_tab",
+  "featured_image",
+  "property_images",
+  "section_break_pricing",
+  "price",
+  "price_per_sqft",
+  "column_break_pricing",
+  "is_featured",
+  "is_available",
+  "section_break_specifications",
+  "bedrooms",
+  "bathrooms",
+  "parking_spaces",
+  "column_break_specs",
+  "floor_number",
+  "furnishing_status",
+  "property_age",
+  "section_break_amenities",
+  "amenities",
+  "section_break_contact",
+  "contact_person",
+  "contact_phone",
+  "contact_email",
   "section_break_20",
   "total_buildings",
   "total_units",
@@ -198,6 +221,134 @@
    "fieldtype": "Int",
    "label": "Available Units",
    "read_only": 1
+  },
+  {
+   "fieldname": "property_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Property Details"
+  },
+  {
+   "fieldname": "featured_image",
+   "fieldtype": "Attach Image",
+   "label": "Featured Image",
+   "description": "Main image displayed in property listings"
+  },
+  {
+   "fieldname": "property_images",
+   "fieldtype": "Table",
+   "label": "Property Images",
+   "options": "Property Image"
+  },
+  {
+   "fieldname": "section_break_pricing",
+   "fieldtype": "Section Break",
+   "label": "Pricing Information"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Price",
+   "options": "Company:company:default_currency",
+   "description": "Property price or starting price"
+  },
+  {
+   "fieldname": "price_per_sqft",
+   "fieldtype": "Currency",
+   "label": "Price per Sq Ft",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "column_break_pricing",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_featured",
+   "fieldtype": "Check",
+   "label": "Featured Property",
+   "default": 0,
+   "description": "Show this property in featured section on website"
+  },
+  {
+   "fieldname": "is_available",
+   "fieldtype": "Check",
+   "label": "Available for Sale/Rent",
+   "default": 1,
+   "description": "Display this property on public website"
+  },
+  {
+   "fieldname": "section_break_specifications",
+   "fieldtype": "Section Break",
+   "label": "Specifications"
+  },
+  {
+   "fieldname": "bedrooms",
+   "fieldtype": "Int",
+   "label": "Bedrooms",
+   "description": "Number of bedrooms (e.g., 1, 2, 3)"
+  },
+  {
+   "fieldname": "bathrooms",
+   "fieldtype": "Int",
+   "label": "Bathrooms"
+  },
+  {
+   "fieldname": "parking_spaces",
+   "fieldtype": "Int",
+   "label": "Parking Spaces"
+  },
+  {
+   "fieldname": "column_break_specs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "floor_number",
+   "fieldtype": "Data",
+   "label": "Floor Number",
+   "description": "e.g., Ground, 1st, 2nd, etc."
+  },
+  {
+   "fieldname": "furnishing_status",
+   "fieldtype": "Select",
+   "label": "Furnishing Status",
+   "options": "\nUnfurnished\nSemi-Furnished\nFully Furnished"
+  },
+  {
+   "fieldname": "property_age",
+   "fieldtype": "Select",
+   "label": "Property Age",
+   "options": "\nUnder Construction\nNew (0-1 years)\n1-5 years\n5-10 years\n10+ years"
+  },
+  {
+   "fieldname": "section_break_amenities",
+   "fieldtype": "Section Break",
+   "label": "Amenities & Features"
+  },
+  {
+   "fieldname": "amenities",
+   "fieldtype": "Table",
+   "label": "Amenities",
+   "options": "Property Amenity"
+  },
+  {
+   "fieldname": "section_break_contact",
+   "fieldtype": "Section Break",
+   "label": "Contact Information"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fieldname": "contact_phone",
+   "fieldtype": "Data",
+   "label": "Contact Phone"
+  },
+  {
+   "fieldname": "contact_email",
+   "fieldtype": "Data",
+   "label": "Contact Email",
+   "options": "Email"
   }
  ],
  "idx": 1,

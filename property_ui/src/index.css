@@ -1,0 +1,321 @@
+@import "./assets/Inter/inter.css";
+@import "../node_modules/frappe-ui/src/style.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Property Management — Dark Mode Color System
+   Frappe UI + Tailwind CSS v3
+   ============================================================ */
+
+/* ── CSS CUSTOM PROPERTIES ──────────────────────────────── */
+@layer base {
+  :root {
+    /* Brand colors */
+    --property-blue: #3B82F6;
+    --property-blue-hover: #2563EB;
+    --property-blue-muted: #DBEAFE;
+    --property-green: #22C55E;
+    --property-green-hover: #16A34A;
+    --property-green-muted: #DCFCE7;
+
+    /* Backgrounds */
+    --property-bg-base: #F9FAFB;
+    --property-bg-surface: #FFFFFF;
+    --property-bg-raised: #F3F4F6;
+    --property-bg-overlay: #E5E7EB;
+
+    /* Text */
+    --property-text-1: #111827;
+    --property-text-2: #6B7280;
+    --property-text-3: #9CA3AF;
+
+    /* Borders */
+    --property-border: #E5E7EB;
+    --property-border-mid: #D1D5DB;
+
+    /* Frappe UI overrides */
+    --fui-color-brand: #3B82F6;
+    --fui-color-brand-light: #DBEAFE;
+    --fui-color-brand-dark: #2563EB;
+  }
+
+  /* Dark mode overrides */
+  .dark {
+    /* Brand colors (lightened for dark bg) */
+    --property-blue: #60A5FA;
+    --property-blue-hover: #3B82F6;
+    --property-blue-muted: #1E3A8A;
+    --property-green: #4ADE80;
+    --property-green-hover: #22C55E;
+    --property-green-muted: #14532D;
+
+    /* Backgrounds (dark slate) */
+    --property-bg-base: #0F172A;
+    --property-bg-surface: #1E293B;
+    --property-bg-raised: #334155;
+    --property-bg-overlay: #475569;
+
+    /* Text */
+    --property-text-1: #F9FAFB;
+    --property-text-2: #D1D5DB;
+    --property-text-3: #9CA3AF;
+
+    /* Borders */
+    --property-border: #374151;
+    --property-border-mid: #4B5563;
+
+    /* Frappe UI overrides */
+    --fui-color-brand: #60A5FA;
+    --fui-color-brand-light: #1E3A8A;
+    --fui-color-brand-dark: #3B82F6;
+  }
+
+  /* Body base styles */
+  body {
+    background-color: var(--property-bg-base);
+    color: var(--property-text-1);
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+
+/* ── UTILITY CLASSES ──────────────────────────────────── */
+@layer utilities {
+  /* Background utilities */
+  .bg-property-base {
+    background-color: var(--property-bg-base);
+  }
+  
+  .bg-property-surface {
+    background-color: var(--property-bg-surface);
+  }
+  
+  .bg-property-raised {
+    background-color: var(--property-bg-raised);
+  }
+
+  .bg-property-overlay {
+    background-color: var(--property-bg-overlay);
+  }
+  
+  /* Text utilities */
+  .text-property-primary {
+    color: var(--property-text-1);
+  }
+  
+  .text-property-secondary {
+    color: var(--property-text-2);
+  }
+  
+  .text-property-tertiary {
+    color: var(--property-text-3);
+  }
+  
+  /* Border utilities */
+  .border-property {
+    border-color: var(--property-border);
+  }
+  
+  .border-property-mid {
+    border-color: var(--property-border-mid);
+  }
+}
+
+/* ── COMPONENT CLASSES ──────────────────────────────────── */
+@layer components {
+  /* Card */
+  .property-card {
+    @apply bg-white dark:bg-property-dk-surface
+           border border-property-border dark:border-property-dk-border
+           rounded-property-lg;
+  }
+
+  /* Primary button */
+  .property-btn-primary {
+    @apply bg-gradient-to-r from-blue-500 to-blue-600
+           dark:from-blue-600 dark:to-blue-700
+           hover:from-blue-600 hover:to-blue-700
+           dark:hover:from-blue-700 dark:hover:to-blue-800
+           text-white font-medium text-sm
+           rounded-property-md px-4 h-9
+           transition-all shadow-sm hover:shadow-md;
+  }
+
+  /* Outline button */
+  .property-btn-outline {
+    @apply bg-transparent
+           text-blue-600 dark:text-blue-400
+           border border-blue-600 dark:border-blue-400
+           hover:bg-blue-50 dark:hover:bg-blue-900/20
+           font-medium text-sm rounded-property-md px-4 h-9
+           transition-colors;
+  }
+
+  /* Input */
+  .property-input {
+    @apply bg-white dark:bg-property-dk-overlay
+           border border-property-border-mid dark:border-property-dk-border-mid
+           text-property-ink dark:text-property-dk-ink
+           placeholder:text-property-hint dark:placeholder:text-property-dk-hint
+           rounded-property-md h-9 px-3 text-sm w-full
+           focus:outline-none
+           focus:border-blue-500 dark:focus:border-blue-400
+           focus:ring-2 focus:ring-blue-500/15 dark:focus:ring-blue-400/20
+           transition;
+  }
+
+  /* Badge */
+  .property-badge {
+    @apply inline-flex items-center gap-1
+           px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+}
+
+/* ── FRAPPE UI COMPONENT OVERRIDES ──────────────────────── */
+/* Fix Dialog transparency issue */
+.bg-surface-modal {
+  background-color: white !important;
+}
+
+.dark .bg-surface-modal {
+  background-color: var(--property-bg-raised) !important;
+}
+
+.dialog-content {
+  background-color: white !important;
+}
+
+.dark .dialog-content {
+  background-color: var(--property-bg-raised) !important;
+}
+
+/* ── ALL INPUT ELEMENTS ─────────────────────────────────── */
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="password"],
+.dark input[type="number"],
+.dark input[type="search"],
+.dark input[type="tel"],
+.dark input[type="url"],
+.dark input[type="date"],
+.dark input[type="time"],
+.dark input[type="datetime-local"],
+.dark textarea,
+.dark select {
+  background-color: var(--property-bg-surface) !important;
+  border-color: var(--property-border) !important;
+  color: var(--property-text-1) !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: var(--property-text-3) !important;
+  opacity: 1;
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: var(--property-blue) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2) !important;
+}
+
+.dark select option {
+  background-color: var(--property-bg-surface);
+  color: var(--property-text-1);
+}
+
+/* ── FRAPPE UI FORM CONTROL OVERRIDES ───────────────────── */
+.dark .form-control label,
+.dark label {
+  color: var(--property-text-2) !important;
+}
+
+/* Frappe UI input wrapper */
+.dark [class*="input-"],
+.dark .frappe-control input,
+.dark .frappe-control textarea,
+.dark .frappe-control select {
+  background-color: var(--property-bg-surface) !important;
+  border-color: var(--property-border) !important;
+  color: var(--property-text-1) !important;
+}
+
+/* ── FRAPPE UI CARD OVERRIDES ───────────────────────────── */
+.dark .card,
+.dark [class*="card"] {
+  background-color: var(--property-bg-surface);
+  border-color: var(--property-border);
+}
+
+/* ── PAGE SECTION HEADINGS ──────────────────────────────── */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: var(--property-text-1);
+}
+
+.dark p {
+  color: var(--property-text-2);
+}
+
+/* ── BORDER SEPARATORS ──────────────────────────────────── */
+.dark hr,
+.dark .border-b,
+.dark .border-t,
+.dark .border-l,
+.dark .border-r {
+  border-color: var(--property-border);
+}
+
+/* ── FRAPPE UI DROPDOWN OVERRIDES ───────────────────────── */
+.dark .dropdown-list,
+.dark [class*="dropdown"] .list,
+.dark .popover-content {
+  background-color: var(--property-bg-raised) !important;
+  border-color: var(--property-border) !important;
+}
+
+.dark .dropdown-item:hover,
+.dark [class*="dropdown"] .list-item:hover {
+  background-color: var(--property-bg-overlay) !important;
+}
+
+/* ── FRAPPE UI BADGE/TAG ────────────────────────────────── */
+.dark .badge {
+  background-color: var(--property-bg-overlay);
+  color: var(--property-text-1);
+}
+
+/* ── SCROLLBAR STYLING ──────────────────────────────────── */
+.dark ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--property-bg-base);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--property-border-mid);
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--property-blue);
+}
+
+/* ── STATUS BADGE DARK MODE FIXES ───────────────────────── */
+.dark .bg-green-100 { background-color: rgba(34, 197, 94, 0.15) !important; }
+.dark .text-green-700, .dark .text-green-800 { color: #86efac !important; }
+.dark .bg-red-100 { background-color: rgba(239, 68, 68, 0.15) !important; }
+.dark .text-red-700, .dark .text-red-800 { color: #fca5a5 !important; }
+.dark .bg-yellow-100 { background-color: rgba(234, 179, 8, 0.15) !important; }
+.dark .text-yellow-700, .dark .text-yellow-800 { color: #fde047 !important; }
+.dark .bg-blue-100 { background-color: rgba(59, 130, 246, 0.15) !important; }
+.dark .text-blue-700, .dark .text-blue-800 { color: #93c5fd !important; }
+.dark .bg-purple-100 { background-color: rgba(168, 85, 247, 0.15) !important; }
+.dark .text-purple-700, .dark .text-purple-800 { color: #d8b4fe !important; }
+.dark .bg-gray-100 { background-color: var(--property-bg-raised) !important; }
+.dark .text-gray-700 { color: var(--property-text-2) !important; }

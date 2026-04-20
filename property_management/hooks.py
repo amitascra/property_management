@@ -57,12 +57,28 @@ required_apps = ["frappe", "erpnext"]
 # ----------
 
 # application home page (will override Website Settings)
-# home_page = "login"
+home_page = "home"
 
 # website user home page (by Role)
-# role_home_page = {
-# 	"Role": "home_page"
-# }
+role_home_page = {
+	"Property Manager": "home",
+	"Property Owner": "home",
+	"Tenant": "home",
+	"System Manager": "home",
+	"Guest": "home",
+	"Website User": "home",
+}
+
+# Website Route Rules - Frontend route rules to make home the home page
+website_route_rules = [
+	{"from_route": "/", "to_route": "home"},
+	{"from_route": "/home", "to_route": "home"},
+	{"from_route": "/signin", "to_route": "home"},
+	{"from_route": "/account/login", "to_route": "home"},
+	{"from_route": "/account/signup", "to_route": "home"},
+	{"from_route": "/property", "to_route": "home"},
+	{"from_route": "/properties", "to_route": "home"},
+]
 
 # Generators
 # ----------

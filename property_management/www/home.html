@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/assets/property_management/frontend/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Property Management</title>
+    
+    <meta name="theme-color" content="#3B82F6" />
+    <meta name="description" content="Comprehensive property management system for real estate operations" />
+    
+    <!-- iOS Specific -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Property Management" />
+    
+    <!-- General -->
+    <meta name="application-name" content="Property Management" />
+    <script type="module" crossorigin src="/assets/property_management/frontend/assets/index-BxwTDxa-.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/property_management/frontend/assets/frappe-ui-CG1PQ7ME.js">
+    <link rel="stylesheet" crossorigin href="/assets/property_management/frontend/assets/frappe-ui-DEpoj0UM.css">
+    <link rel="stylesheet" crossorigin href="/assets/property_management/frontend/assets/index-CeOvcSZ8.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    
+    <script>
+      window.csrf_token = "{{ csrf_token }}"
+      window.site_name = '{{ site_name }}'
+      if (!window.frappe) window.frappe = {}
+      frappe.boot = {{ boot }}
+    </script></body>
+          
+</html>

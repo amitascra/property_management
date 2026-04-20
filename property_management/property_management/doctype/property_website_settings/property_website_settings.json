@@ -1,0 +1,336 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-04-19 11:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "branding_section",
+  "site_logo",
+  "site_name",
+  "tagline",
+  "column_break_branding",
+  "contact_phone",
+  "contact_email",
+  "whatsapp_number",
+  "hero_slider_section",
+  "hero_slides",
+  "homepage_sections_tab",
+  "featured_section_title",
+  "featured_section_description",
+  "column_break_featured",
+  "show_featured_properties",
+  "featured_properties_limit",
+  "section_break_about",
+  "about_section_title",
+  "about_section_content",
+  "about_section_image",
+  "column_break_about",
+  "show_about_section",
+  "section_break_why_choose",
+  "why_choose_title",
+  "why_choose_features",
+  "section_break_cta",
+  "cta_section_title",
+  "cta_section_description",
+  "column_break_cta",
+  "show_cta_section",
+  "about_page_tab",
+  "about_hero_title",
+  "about_hero_description",
+  "section_break_story",
+  "company_story_title",
+  "company_story_content",
+  "company_story_image",
+  "section_break_mission",
+  "mission_title",
+  "mission_content",
+  "vision_title",
+  "vision_content",
+  "section_break_stats",
+  "stats",
+  "section_break_strengths",
+  "strengths_title",
+  "strengths"
+ ],
+ "fields": [
+  {
+   "fieldname": "branding_section",
+   "fieldtype": "Section Break",
+   "label": "Branding & Contact"
+  },
+  {
+   "fieldname": "site_logo",
+   "fieldtype": "Attach Image",
+   "label": "Site Logo"
+  },
+  {
+   "fieldname": "site_name",
+   "fieldtype": "Data",
+   "label": "Site Name",
+   "default": "Property Management"
+  },
+  {
+   "fieldname": "tagline",
+   "fieldtype": "Data",
+   "label": "Tagline",
+   "default": "Your Dream Property Awaits"
+  },
+  {
+   "fieldname": "column_break_branding",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_phone",
+   "fieldtype": "Data",
+   "label": "Contact Phone",
+   "default": "+91 1234567890"
+  },
+  {
+   "fieldname": "contact_email",
+   "fieldtype": "Data",
+   "label": "Contact Email"
+  },
+  {
+   "fieldname": "whatsapp_number",
+   "fieldtype": "Data",
+   "label": "WhatsApp Number",
+   "description": "Format: 911234567890 (without + or spaces)"
+  },
+  {
+   "fieldname": "hero_slider_section",
+   "fieldtype": "Section Break",
+   "label": "Hero Slider"
+  },
+  {
+   "fieldname": "hero_slides",
+   "fieldtype": "Table",
+   "label": "Hero Slides",
+   "options": "Property Website Slide"
+  },
+  {
+   "fieldname": "homepage_sections_tab",
+   "fieldtype": "Tab Break",
+   "label": "Homepage Sections"
+  },
+  {
+   "fieldname": "featured_section_title",
+   "fieldtype": "Data",
+   "label": "Featured Section Title",
+   "default": "Featured Properties"
+  },
+  {
+   "fieldname": "featured_section_description",
+   "fieldtype": "Small Text",
+   "label": "Featured Section Description",
+   "default": "Explore our handpicked selection of premium properties available for sale and rent."
+  },
+  {
+   "fieldname": "column_break_featured",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "show_featured_properties",
+   "fieldtype": "Check",
+   "label": "Show Featured Properties Section",
+   "default": 1
+  },
+  {
+   "fieldname": "featured_properties_limit",
+   "fieldtype": "Int",
+   "label": "Featured Properties Limit",
+   "default": 6
+  },
+  {
+   "fieldname": "section_break_about",
+   "fieldtype": "Section Break",
+   "label": "About Section (Homepage)"
+  },
+  {
+   "fieldname": "about_section_title",
+   "fieldtype": "Data",
+   "label": "About Section Title",
+   "default": "About Us"
+  },
+  {
+   "fieldname": "about_section_content",
+   "fieldtype": "Text Editor",
+   "label": "About Section Content"
+  },
+  {
+   "fieldname": "about_section_image",
+   "fieldtype": "Attach Image",
+   "label": "About Section Image"
+  },
+  {
+   "fieldname": "column_break_about",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "show_about_section",
+   "fieldtype": "Check",
+   "label": "Show About Section",
+   "default": 1
+  },
+  {
+   "fieldname": "section_break_why_choose",
+   "fieldtype": "Section Break",
+   "label": "Why Choose Us Section"
+  },
+  {
+   "fieldname": "why_choose_title",
+   "fieldtype": "Data",
+   "label": "Why Choose Us Title",
+   "default": "Why Choose Us"
+  },
+  {
+   "fieldname": "why_choose_features",
+   "fieldtype": "Table",
+   "label": "Features",
+   "options": "Property Website Feature"
+  },
+  {
+   "fieldname": "section_break_cta",
+   "fieldtype": "Section Break",
+   "label": "Call to Action Section"
+  },
+  {
+   "fieldname": "cta_section_title",
+   "fieldtype": "Data",
+   "label": "CTA Title",
+   "default": "Ready to Find Your Dream Property?"
+  },
+  {
+   "fieldname": "cta_section_description",
+   "fieldtype": "Small Text",
+   "label": "CTA Description",
+   "default": "Get in touch with our expert team today and let us help you find the perfect property."
+  },
+  {
+   "fieldname": "column_break_cta",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "show_cta_section",
+   "fieldtype": "Check",
+   "label": "Show CTA Section",
+   "default": 1
+  },
+  {
+   "fieldname": "about_page_tab",
+   "fieldtype": "Tab Break",
+   "label": "About Page"
+  },
+  {
+   "fieldname": "about_hero_title",
+   "fieldtype": "Data",
+   "label": "About Hero Title",
+   "default": "About Us"
+  },
+  {
+   "fieldname": "about_hero_description",
+   "fieldtype": "Small Text",
+   "label": "About Hero Description",
+   "default": "Your trusted partner in real estate for over a decade"
+  },
+  {
+   "fieldname": "section_break_story",
+   "fieldtype": "Section Break",
+   "label": "Company Story"
+  },
+  {
+   "fieldname": "company_story_title",
+   "fieldtype": "Data",
+   "label": "Story Title",
+   "default": "Our Story"
+  },
+  {
+   "fieldname": "company_story_content",
+   "fieldtype": "Text Editor",
+   "label": "Story Content"
+  },
+  {
+   "fieldname": "company_story_image",
+   "fieldtype": "Attach Image",
+   "label": "Story Image"
+  },
+  {
+   "fieldname": "section_break_mission",
+   "fieldtype": "Section Break",
+   "label": "Mission & Vision"
+  },
+  {
+   "fieldname": "mission_title",
+   "fieldtype": "Data",
+   "label": "Mission Title",
+   "default": "Our Mission"
+  },
+  {
+   "fieldname": "mission_content",
+   "fieldtype": "Text Editor",
+   "label": "Mission Content"
+  },
+  {
+   "fieldname": "vision_title",
+   "fieldtype": "Data",
+   "label": "Vision Title",
+   "default": "Our Vision"
+  },
+  {
+   "fieldname": "vision_content",
+   "fieldtype": "Text Editor",
+   "label": "Vision Content"
+  },
+  {
+   "fieldname": "section_break_stats",
+   "fieldtype": "Section Break",
+   "label": "Statistics"
+  },
+  {
+   "fieldname": "stats",
+   "fieldtype": "Table",
+   "label": "Stats",
+   "options": "Property Website Stat"
+  },
+  {
+   "fieldname": "section_break_strengths",
+   "fieldtype": "Section Break",
+   "label": "Our Strengths"
+  },
+  {
+   "fieldname": "strengths_title",
+   "fieldtype": "Data",
+   "label": "Strengths Title",
+   "default": "Why Choose Us"
+  },
+  {
+   "fieldname": "strengths",
+   "fieldtype": "Table",
+   "label": "Strengths",
+   "options": "Property Website Feature"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-04-19 11:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Property Management",
+ "name": "Property Website Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

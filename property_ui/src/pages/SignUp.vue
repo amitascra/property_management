@@ -1,0 +1,296 @@
+<template>
+  <div class="min-h-screen flex">
+    <!-- Left Side - Form -->
+    <div class="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="w-full max-w-md py-12">
+        <!-- Logo for mobile -->
+        <div class="lg:hidden text-center mb-8">
+          <svg class="w-12 h-12 mx-auto text-property-blue" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+        </div>
+
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold text-property-ink mb-2">Create Account</h2>
+          <p class="text-property-body">Join us to start your property journey</p>
+        </div>
+
+        <form class="space-y-5" @submit.prevent="submit">
+          <div>
+            <label for="full_name" class="block text-sm font-medium text-property-ink mb-2">
+              Full Name
+            </label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <input
+                id="full_name"
+                name="full_name"
+                type="text"
+                required
+                placeholder="John Doe"
+                class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-property-blue focus:border-transparent transition-all"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-property-ink mb-2">
+              Email Address
+            </label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                </svg>
+              </div>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="johndoe@email.com"
+                class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-property-blue focus:border-transparent transition-all"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="phone" class="block text-sm font-medium text-property-ink mb-2">
+              Phone Number
+            </label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                required
+                placeholder="+91 1234567890"
+                class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-property-blue focus:border-transparent transition-all"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="password" class="block text-sm font-medium text-property-ink mb-2">
+              Password
+            </label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              </div>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                required
+                placeholder="••••••••"
+                class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-property-blue focus:border-transparent transition-all"
+              />
+            </div>
+            <p class="mt-1 text-xs text-gray-500">Must be at least 6 characters</p>
+          </div>
+
+          <div>
+            <label for="confirm_password" class="block text-sm font-medium text-property-ink mb-2">
+              Confirm Password
+            </label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <input
+                id="confirm_password"
+                name="confirm_password"
+                type="password"
+                required
+                placeholder="••••••••"
+                class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-property-blue focus:border-transparent transition-all"
+              />
+            </div>
+          </div>
+
+          <div v-if="errorMessage" class="p-4 bg-red-50 border border-red-200 rounded-lg flex items-start space-x-3">
+            <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+            </svg>
+            <p class="text-sm text-red-800">{{ errorMessage }}</p>
+          </div>
+
+          <div v-if="successMessage" class="p-4 bg-green-50 border border-green-200 rounded-lg flex items-start space-x-3">
+            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <p class="text-sm text-green-800">{{ successMessage }}</p>
+          </div>
+
+          <Button 
+            type="submit" 
+            :loading="signupResource.loading" 
+            class="w-full py-3 bg-property-blue hover:bg-property-blue-600 text-white font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl"
+          >
+            Create Account
+          </Button>
+
+          <div class="relative my-6">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-gray-300"></div>
+            </div>
+            <div class="relative flex justify-center text-sm">
+              <span class="px-4 bg-white text-property-body">Already have an account?</span>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <router-link 
+              to="/signin" 
+              class="inline-flex items-center justify-center w-full py-3 border-2 border-property-blue text-property-blue font-semibold rounded-lg hover:bg-property-blue hover:text-white transition-all"
+            >
+              Sign In Instead
+            </router-link>
+          </div>
+        </form>
+
+        <p class="mt-8 text-center text-xs text-gray-500">
+          By creating an account, you agree to our 
+          <a href="#" class="text-property-blue hover:underline">Terms of Service</a> and 
+          <a href="#" class="text-property-blue hover:underline">Privacy Policy</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Side - Branding -->
+    <div class="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-property-blue to-property-blue-600 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <defs>
+            <pattern id="grid-signup" width="10" height="10" patternUnits="userSpaceOnUse">
+              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100" height="100" fill="url(#grid-signup)" />
+        </svg>
+      </div>
+      
+      <div class="relative z-10 flex flex-col justify-center px-12 text-white">
+        <div class="mb-8">
+          <svg class="w-16 h-16 mb-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          <h1 class="text-4xl font-bold mb-2">Join Us Today</h1>
+          <p class="text-blue-100 text-lg">Start your journey to finding the perfect property</p>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6">
+            <div class="flex items-center space-x-4 mb-4">
+              <div class="bg-white bg-opacity-20 rounded-full p-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold">Browse Properties</h3>
+            </div>
+            <p class="text-blue-100">Access thousands of verified properties across multiple locations</p>
+          </div>
+
+          <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6">
+            <div class="flex items-center space-x-4 mb-4">
+              <div class="bg-white bg-opacity-20 rounded-full p-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold">Save Favorites</h3>
+            </div>
+            <p class="text-blue-100">Create your wishlist and get instant updates on saved properties</p>
+          </div>
+
+          <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6">
+            <div class="flex items-center space-x-4 mb-4">
+              <div class="bg-white bg-opacity-20 rounded-full p-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold">Connect Directly</h3>
+            </div>
+            <p class="text-blue-100">Chat with property owners and agents in real-time</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { createResource } from 'frappe-ui'
+
+const router = useRouter()
+const errorMessage = ref('')
+const successMessage = ref('')
+
+const signupResource = createResource({
+  url: 'property_management.api.signup',
+  onSuccess() {
+    successMessage.value = 'Account created successfully! Redirecting to sign in...'
+    errorMessage.value = ''
+    setTimeout(() => {
+      router.push('/signin')
+    }, 2000)
+  },
+  onError(err) {
+    errorMessage.value = err.message || 'Failed to create account. Please try again.'
+    successMessage.value = ''
+  }
+})
+
+function submit(e) {
+  errorMessage.value = ''
+  successMessage.value = ''
+
+  const formData = new FormData(e.target)
+  const full_name = formData.get('full_name')
+  const email = formData.get('email')
+  const phone = formData.get('phone')
+  const password = formData.get('password')
+  const confirm_password = formData.get('confirm_password')
+
+  // Validation
+  if (!full_name || !email || !phone || !password || !confirm_password) {
+    errorMessage.value = 'Please fill in all fields'
+    return
+  }
+
+  if (password !== confirm_password) {
+    errorMessage.value = 'Passwords do not match'
+    return
+  }
+
+  if (password.length < 6) {
+    errorMessage.value = 'Password must be at least 6 characters long'
+    return
+  }
+
+  signupResource.submit({
+    full_name,
+    email,
+    phone,
+    password
+  })
+}
+</script>
